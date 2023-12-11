@@ -1,4 +1,3 @@
-<!-- src/routes/+layout.svelte -->
 <script lang="ts">
 	import '../styles.css';
 	import { invalidate } from '$app/navigation';
@@ -20,12 +19,15 @@
 
 		return () => subscription.unsubscribe();
 	});
+	console.log('dtis', data.session);
 </script>
 
 <svelte:head>
-	<title>User Management</title>
+	<title>OpenAssRoom</title>
 </svelte:head>
-
+<div>
+	<h1>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h1>
+</div>
 <div class="container" style="padding: 50px 0 100px 0">
 	<slot />
 </div>
