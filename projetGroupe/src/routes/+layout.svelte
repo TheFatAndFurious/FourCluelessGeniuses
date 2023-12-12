@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../styles.css';
+	import '../app.css';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
 
@@ -27,10 +27,12 @@
 <div>
 	<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
 </div>
-<div>
-	Routes actuelles:
-	<a href="/private/cours">Liste des cours</a>
-	<a href="/private/cours/create">Creer un cours</a>
+<div class="flex flex-col">
+	<h3 class="text-primary-900 font-bold underline">Routes actuelles:</h3>
+	<ul>
+		<a href="/private/cours">Liste des cours</a>
+		<a href="/private/cours/create">Creer un cours</a>
+	</ul>
 </div>
 <div class="container" style="padding: 50px 0 100px 0">
 	<slot />
