@@ -19,14 +19,18 @@
 
 		return () => subscription.unsubscribe();
 	});
-	console.log('dtis', data.session);
 </script>
 
 <svelte:head>
 	<title>OpenAssRoom</title>
 </svelte:head>
 <div>
-	<h1>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h1>
+	<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
+</div>
+<div>
+	Routes actuelles:
+	<a href="/private/cours">Liste des cours</a>
+	<a href="/private/cours/create">Creer un cours</a>
 </div>
 <div class="container" style="padding: 50px 0 100px 0">
 	<slot />

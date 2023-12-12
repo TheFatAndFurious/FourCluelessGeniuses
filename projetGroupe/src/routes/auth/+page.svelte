@@ -3,7 +3,6 @@
 	export let data;
 	let { supabase } = data;
 	$: ({ supabase } = data);
-	console.log(data.session);
 
 	let email: string;
 	let password: string;
@@ -16,7 +15,6 @@
 				emailRedirectTo: `${location.origin}/auth/callback`
 			}
 		});
-		console.log('3333', response);
 	};
 
 	const handleSignIn = async () => {
@@ -24,7 +22,6 @@
 			email,
 			password
 		});
-		console.log('🚀 ~ file: +page.svelte:26 ~ handleSignIn ~ response:', response);
 	};
 
 	const handleSignOut = async () => {
