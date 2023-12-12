@@ -1,37 +1,38 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
 
-	export let data;
-	export let form;
+	// export let data../../account/$types.js;
+	// export let form../../account/$types.js;
 
-	let { session, supabase, profile } = data;
-	$: ({ session, supabase, profile } = data);
+	// let { session, supabase, profile } = data;
+	// $: ({ session, supabase, profile } = data);
 
-	let profileForm: HTMLFormElement;
-	let loading = false;
-	let fullName: string = profile?.full_name ?? '';
-	let username: string = profile?.username ?? '';
-	let website: string = profile?.website ?? '';
-	let avatarUrl: string = profile?.avatar_url ?? '';
+	// let profileForm: HTMLFormElement;
+	// let loading = false;
+	// let fullName: string = profile?.full_name ?? '';
+	// let username: string = profile?.username ?? '';
+	// let website: string = profile?.website ?? '';
+	// let avatarUrl: string = profile?.avatar_url ?? '';
 
-	const handleSubmit: SubmitFunction = () => {
-		loading = true;
-		return async () => {
-			loading = false;
-		};
-	};
+	// const handleSubmit: SubmitFunction = () => {
+	// 	loading = true;
+	// 	return async () => {
+	// 		loading = false;
+	// 	};
+	// };
 
-	const handleSignOut: SubmitFunction = () => {
-		loading = true;
-		return async ({ update }) => {
-			loading = false;
-			update();
-		};
-	};
+	// const handleSignOut: SubmitFunction = () => {
+	// 	loading = true;
+	// 	return async ({ update }) => {
+	// 		loading = false;
+	// 		update();
+	// 	};
+	// };
 </script>
 
 <div class="form-widget">
-	<form
+	<div><h1>test</h1></div>
+	<!-- <form
 		class="form-widget"
 		method="post"
 		action="?/update"
@@ -67,5 +68,5 @@
 		<div>
 			<button class="button block" disabled={loading}> Sign out </button>
 		</div>
-	</form>
+	</form> -->
 </div>

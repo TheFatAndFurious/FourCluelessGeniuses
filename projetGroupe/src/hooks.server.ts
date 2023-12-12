@@ -1,3 +1,5 @@
+// Fichier qui sert de middleware et qui va etre lu a chaque requete, c'est ici que l'on va controler que l'utilisateur est authentifié avant de le laisser acceder aux pages protegees.
+
 import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 import { redirect, type Handle } from '@sveltejs/kit';

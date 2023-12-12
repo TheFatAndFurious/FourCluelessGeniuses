@@ -48,5 +48,4 @@
 	<button>Sign in</button>
 </form>
 
-<button on:click={handleSignIn}>Sign in</button>
 <button on:click={handleSignOut}>Sign out</button>
