@@ -1,14 +1,14 @@
 <script lang="ts">
-	import '../styles.css';
-	import { invalidate } from '$app/navigation';
-	import { onMount } from 'svelte';
+	import "../app.pcss";
+    import { invalidate } from '$app/navigation';
+    import { onMount } from 'svelte';
 
-	export let data;
+    export let data;
 
-	let { supabase, session } = data;
-	$: ({ supabase, session } = data);
+    let { supabase, session } = data;
+    $: ({ supabase, session } = data);
 
-	onMount(() => {
+    onMount(() => {
 		const {
 			data: { subscription }
 		} = supabase.auth.onAuthStateChange((event, _session) => {
@@ -19,7 +19,7 @@
 
 		return () => subscription.unsubscribe();
 	});
-	console.log('dtis', data.session);
+    console.log('dtis', data.session);
 </script>
 
 <svelte:head>
@@ -29,5 +29,5 @@
 	<h1>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h1>
 </div>
 <div class="container" style="padding: 50px 0 100px 0">
-	<slot />
+	<slot></slot>
 </div>
