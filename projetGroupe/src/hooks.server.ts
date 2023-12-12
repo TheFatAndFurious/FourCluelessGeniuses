@@ -26,10 +26,10 @@ async function supabase({ event, resolve }) {
 }
 
 async function authorization({ event, resolve }) {
-	if (event.url.pathname.startsWith('/private')) {
+	if (event.url.pathname.startsWith('/private/')) {
 		const session = await event.locals.getSession();
 		if (!session) {
-			throw redirect(303, '/login');
+			throw redirect(303, '/');
 		}
 	}
 	return resolve(event);

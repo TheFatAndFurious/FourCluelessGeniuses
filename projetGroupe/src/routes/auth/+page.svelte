@@ -1,5 +1,5 @@
-<!-- // src/routes/auth/+page.svelte -->
 <script lang="ts">
+	import { blur } from 'svelte/transition';
 	export let data;
 	let { supabase } = data;
 	$: ({ supabase } = data);

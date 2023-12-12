@@ -19,19 +19,31 @@
 
 		return () => subscription.unsubscribe();
 	});
+
+	const handleSignOut = async () => {
+		await supabase.auth.signOut();
+	};
 </script>
 
 <svelte:head>
 	<title>OpenAssRoom</title>
 </svelte:head>
-<div>
-	<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
-</div>
+{#if data.session}
+	<div>
+		<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
+		<button on:click={handleSignOut} class="btn variant-outline-warning">Deconnection</button>
+	</div>
+{:else}
+	<div>
+		<h3>Bonjour bel inconnu(e)</h3>
+	</div>
+{/if}
 <div class="flex flex-col">
 	<h3 class="text-primary-900 font-bold underline">Routes actuelles:</h3>
 	<ul>
-		<a href="/private/cours">Liste des cours</a>
-		<a href="/private/cours/create">Creer un cours</a>
+		<li><a href="/private/cours">Liste des cours</a></li>
+		<li><a href="/private/cours/create">Creer un cours</a></li>
+		<li><a href="/private/cours/sessions">Liste des sessions</a></li>
 	</ul>
 </div>
 <div class="container" style="padding: 50px 0 100px 0">
