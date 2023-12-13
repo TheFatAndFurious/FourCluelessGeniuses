@@ -3,11 +3,12 @@
 
 	export let data: PageData;
 	const sessions = data.sessions;
+	console.log('🚀 ~ file: +page.svelte:6 ~ sessions:', sessions.data);
 </script>
 
 <h1>Liste des sessions</h1>
 <div>
-	{#each sessions as session}
+	{#each sessions.data as session}
 		<div>
 			<a href="/private/sessions/{session.id_session}">
 				<h3>{session.name_session}</h3>

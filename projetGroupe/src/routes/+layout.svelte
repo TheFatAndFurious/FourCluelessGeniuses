@@ -43,7 +43,7 @@
 	<ul>
 		<li><a href="/private/cours">Liste des cours</a></li>
 		<li><a href="/private/cours/create">Creer un cours</a></li>
-		<li><a href="/private/cours/sessions">Liste des sessions</a></li>
+		<li><a href="/private/sessions">Liste des sessions</a></li>
 	</ul>
 </div>
 <div class="container" style="padding: 50px 0 100px 0">
