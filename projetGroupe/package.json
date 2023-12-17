@@ -12,7 +12,8 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest"
+		"test:unit": "vitest",
+		"update-types": "npx supabase gen types typescript --project-id iujmrnyrbjgzmjxbbtmt > types/supabase.ts"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -25,7 +26,7 @@
 		"eslint-plugin-svelte": "^2.30.0",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.0",
-		"supabase": "^1.123.0",
+		"supabase": "^1.123.4",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",
