@@ -34,18 +34,14 @@
 		<button on:click={handleSignOut} class="btn variant-outline-warning">Deconnection</button>
 	</div>
 {:else}
-	<div>
+	<!-- <div>
 		<h3>Bonjour bel inconnu(e)</h3>
-	</div>
+	</div> -->
 {/if}
-<div class="flex flex-col">
-	<h3 class="text-primary-900 font-bold underline">Routes actuelles:</h3>
-	<ul>
-		<li><a href="/private/cours">Liste des cours</a></li>
-		<li><a href="/private/cours/create">Creer un cours</a></li>
-		<li><a href="/private/sessions">Liste des sessions</a></li>
-	</ul>
-</div>
-<div class="container" style="padding: 50px 0 100px 0">
+<div class="bg-secondary-500" style="display:flex; justify-content: center; align-items: center; height: 100vh;">
 	<slot />
 </div>
+
+<style>
+	
+</style>

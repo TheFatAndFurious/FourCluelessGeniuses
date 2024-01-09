@@ -49,6 +49,7 @@
 
 <div class="bg-primary-500 w-80 mx-auto">
 	<div class=" border border-primary-900 rounded p-4">
+		<img src="../../../logo.png" alt="Logo Adrar">
 		<h2 class="text-center font-semibold">CONNEXION</h2>
 		<div class="p-2">
 			<form on:submit={handleSignIn} class="flex flex-col gap-y-2">
