@@ -26,7 +26,7 @@
 
 	function getSession() {
 		throw new Error('Function not implemented.');
-	}
+	};
 </script>
 
 <div class="w-80 mx-auto">
