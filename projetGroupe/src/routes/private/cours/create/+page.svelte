@@ -4,7 +4,7 @@
 	import { supabase } from '$lib/supabaseClient';
 
 	export let data: PageData;
-	let titre: string;
+	let titre;
 	let description: string;
 	let loading: boolean = false;
 
