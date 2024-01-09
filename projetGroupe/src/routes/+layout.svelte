@@ -29,7 +29,7 @@
 <svelte:head>
 	<title>OpenAssRoom</title>
 </svelte:head>
-<AppRail />
+<Header userName={userName.firstName}{userName.lastName}/>
 {#if data.session}
 	<div>
 		<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
