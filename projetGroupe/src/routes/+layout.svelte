@@ -30,7 +30,7 @@
 	<title>OpenAssRoom</title>
 </svelte:head>
 <Header userName={userName.firstName}{userName.lastName}/>
-<Header userName={userName.firstName}{userName.lastName}/>
+
 {#if data.session}
 	<div>
 		<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
