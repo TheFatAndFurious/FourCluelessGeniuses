@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { blur } from 'svelte/transition';
 	export let data;
 	let { supabase } = data;
@@ -7,27 +8,31 @@
 	let email: string;
 	let password: string;
 
-	const handleSignUp = async () => {
-		const response = await supabase.auth.signUp({
-			email,
-			password,
-			options: {
-				emailRedirectTo: `${location.origin}/auth/callback`
-			}
-		});
-	};
+	// const handleSignUp = async () => {
+	// 	const response = await supabase.auth.signUp({
+	// 		email,
+	// 		password,
+	// 		options: {
+	// 			emailRedirectTo: `${location.origin}/auth/callback`
+	// 		}
+	// 	});
+	// };
 
 	const handleSignIn = async () => {
 		const response = await supabase.auth.signInWithPassword({
 			email,
 			password
 		});
+		goto('/private/cours')
 	};
 
 	function getSession() {
 		throw new Error('Function not implemented.');
 	}
 </script>
+
+<!-- =============================================================================================================================== -->
+
 <div class="flex flex-col items-center gap-10">
 	<span>
 		<svg class="cross_top_left" xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31"><g transform="translate(-32.5 -25.262)"><path d="M.5,31h-1V0h1Z" transform="translate(48.5 25.262)" fill="#7b7b7b"/><path d="M.5,31h-1V0h1Z" transform="translate(63.5 41.262) rotate(90)" fill="#6b6b6b"/><path d="M5.5,0A5.5,5.5,0,1,1,0,5.5,5.5,5.5,0,0,1,5.5,0Z" transform="translate(43 35.762)" fill="#dadada"/></g></svg>
@@ -63,6 +68,7 @@
 			
 		</div>
 		
+<!-- =============================================================================================================================== -->
 		
 		<style lang="scss">
 .connexion_container{
@@ -128,12 +134,14 @@
 		right: 10px;
 		opacity: 0.5;
 	}
+
 	.cross_bottom_left{
 		position: absolute;
 		bottom: 10px;
 		left: 10px;
 		opacity: 0.5;
 	}
+	
 	.cross_bottom_rigth{
 		position: absolute;
 		bottom: 10px;
