@@ -42,7 +42,7 @@
 			</form>
 		</div>
 	</div>
-	<!-- <div class=" border border-primary-900 rounded p-4">
+	<div class=" border border-primary-900 rounded p-4">
 		<h2 class="text-center font-semibold">Se connecter</h2>
 		<div class="p-2">
 			<form on:submit={handleSignIn} class="flex flex-col gap-y-2">
@@ -53,5 +53,5 @@
 				<button type="submit" class="btn btn-md variant-filled">Sign in</button>
 			</form>
 		</div>
-	</div> -->
+	</div>
 </div>
