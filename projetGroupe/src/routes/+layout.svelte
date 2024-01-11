@@ -2,6 +2,12 @@
 	import '../app.css';
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import Header from '$lib/Components/Menus/Header.svelte';
+
+	const userName = {
+		firstName: 'César',
+		lastName: 'Labrunie'
+	};
 	import AppRail from '$lib/Components/AppRail.svelte';
 
 	export let data;
@@ -29,8 +35,7 @@
 <svelte:head>
 	<title>OpenAssRoom</title>
 </svelte:head>
-<Header userName={userName.firstName}{userName.lastName}/>
-
+<AppRail />
 {#if data.session}
 	<div>
 		<h3>Hello {data.session?.user.email}, you have {data.session?.user.role} privileges</h3>
