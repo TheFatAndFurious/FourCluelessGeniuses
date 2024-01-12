@@ -4,17 +4,15 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/Components/Menus/Header.svelte';
 
-	const userName = {
-		firstName: 'César',
-		lastName: 'Labrunie'
-	};
+
 	import AppRail from '$lib/Components/AppRail.svelte';
 
 	export let data;
 
 	let { supabase, session } = data;
 	$: ({ supabase, session } = data);
-
+	
+	
 	onMount(() => {
 		const {
 			data: { subscription }
@@ -35,6 +33,7 @@
 <svelte:head>
 	<title>OpenAssRoom</title>
 </svelte:head>
+<Header {data}/>
 <AppRail />
 {#if data.session}
 	<div>
